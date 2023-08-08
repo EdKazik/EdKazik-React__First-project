@@ -1,0 +1,20 @@
+.input {
+  width: 270px;
+  height: 50px;
+  background: rgb(179, 177, 177);
+}
+
+.input__label {
+  width: 277px;
+  height: 56px;
+  background: rgb(179, 177, 177);
+}
+
+.input__submit {
+  width: 277px;
+  height: 56px;
+  background: rgb(5, 153, 54);
+  color: whitesmoke;
+  font-size: 18px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
