@@ -1,0 +1,70 @@
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 70px;
+}
+
+.buttons > button {
+  width: 179px;
+  height: 52px;
+  color: rgb(6, 160, 26);
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 52px;
+  color: aliceblue;
+  margin: 0 0 75px 0;
+}
+
+.left__button {
+  position: relative;
+  font-weight: 600;
+}
+
+.left__button_logo {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 28px;
+}
+
+.right__button {
+  position: relative;
+  font-weight: 600;
+}
+
+.right__button_logo {
+  position: absolute;
+  top: 50%;
+  left: 12%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-size: 28px;
+}
+
+.table__box {
+  text-align: center;
+}
+
+.table {
+  margin: 0 auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  background: rgb(101, 102, 99);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+td {
+  padding: 10px 20px;
+  background: rgba(179, 172, 167, 0.651);
+}
+
+th {
+  padding: 10px 20px;
+  font-size: 22px;
+  color: aliceblue;
+}
