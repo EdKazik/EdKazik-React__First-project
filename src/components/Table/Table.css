@@ -22,7 +22,7 @@ h1 {
   font-weight: 600;
 }
 
-.left__button_logo {
+.left__button-logo {
   position: absolute;
   top: 50%;
   left: 20%;
@@ -36,7 +36,7 @@ h1 {
   font-weight: 600;
 }
 
-.right__button_logo {
+.right__button-logo {
   position: absolute;
   top: 50%;
   left: 12%;
