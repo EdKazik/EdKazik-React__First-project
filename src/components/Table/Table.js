@@ -6,33 +6,9 @@ import { BsFillPencilFill } from 'react-icons/bs';
 import { BsFillTrash3Fill } from 'react-icons/bs';
 
 
-const Table = () => {
-    
-    const products = [
-        {
-            id: 1,
-            category: 'PC',
-            name: 'Lenovo Y50-70',
-            quantity: '5',
-            price: '25,000.00',
-        },
-        {
-            id: 2,
-            category: 'Clothes',
-            name: 'Nike M Nk Df Acd21',
-            quantity: '22',
-            price: '4,000.00',
-        },
-        {
-            id: 3,
-            category: 'Plumbing',
-            name: 'Cersanit MITO 17',
-            quantity: '1337',
-            price: '5,000.00',
-        }
-    ];
+const Table = (props) => {
 
-    const setProduct = products.map(el => {
+    const setProducts = props.products.map(el => {
         return (
             
             <tr key={el.id}>
@@ -45,7 +21,7 @@ const Table = () => {
             <td><BsFillTrash3Fill/></td>
             </tr>
         )
-    });
+    })
 
     return (
         <div className='main'>
@@ -69,11 +45,10 @@ const Table = () => {
                             <th>Quantity</th>
                             <th>Price($)</th>
                         </tr>
-                        {setProduct}
+                        {setProducts}
                     </tbody>
                 </table>
             </div>
-            
         </div>
     )
 }
