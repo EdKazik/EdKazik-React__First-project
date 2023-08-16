@@ -57,6 +57,7 @@ const ProductsPreview = () => {
         <div className='container'>
             <div className='products__preview-logo'><img src={logo2} alt='logotype' /></div>
             <Products productsList={productsList} />
+            {/* {productsList.map(product => {<Products product={product} />})} */}
         </div>
     )
 }
