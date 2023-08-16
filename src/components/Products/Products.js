@@ -25,6 +25,8 @@ const Products = (props) => {
         <div className='products__block'>
             {product}
         </div>
+
+
     )
 }
 
