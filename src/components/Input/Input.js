@@ -1,10 +1,10 @@
 import './Input.css'
 
-const Input = (props) => {
+const Input = ({type, placeholder, value, className, handleChange, name}) => {
 
     return (
         <label className='input__label'>
-            <input type={props.type} placeholder={props.placeholder} value={props.value} className={props.className} disabled={props.disabled} />
+            <input name={name} onChange={handleChange} type={type} placeholder={placeholder} value={value} className={className}  />
         </label>
         
     )
