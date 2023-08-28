@@ -7,7 +7,7 @@
   text-align: center;
 }
 
-.img {
+.img__login {
   margin: 80px 0 85px 0;
 }
 
@@ -17,4 +17,29 @@
   gap: 45px;
   margin: 0 110px 210px 110px;
   position: relative;
+}
+
+.login__span {
+  position: absolute;
+  content: "";
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+}
+.password__span {
+  position: absolute;
+  content: "";
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
+}
+.log-pas__span {
+  position: absolute;
+  content: "";
+  bottom: -15%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: red;
 }

@@ -7,7 +7,7 @@ const Products = (props) => {
     const product = props.productsList.map(elem => {
         return(
             <div className='product__block' key={elem.id}>
-                <div className='img'><img src={ elem.img } alt='logotype'/></div>
+                <div className='img__products'><img src={ elem.img } alt='logotype'/></div>
                 <h3>{elem.text}</h3>
                 <div className='price__quantity-block'>
                     <div className='price'><span>{elem.price}₴</span></div>
