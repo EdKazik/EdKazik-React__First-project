@@ -2,9 +2,9 @@ import './Products.css';
 import { SlBasketLoaded } from 'react-icons/sl';
 
 
-const Products = (props) => {
+const Products = ({ productsList }) => {
     
-    const product = props.productsList.map(elem => {
+    const product = productsList.map(elem => {
         return(
             <div className='product__block' key={elem.id}>
                 <div className='img__products'><img src={ elem.img } alt='logotype'/></div>
@@ -19,7 +19,7 @@ const Products = (props) => {
                 </div>
             </div>
     )})
-    
+    console.log(productsList)
 
     return (
         <div className='products__block'>

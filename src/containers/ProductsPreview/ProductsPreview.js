@@ -6,6 +6,7 @@ import imgHuawei from '../../assets/matepad-se.jpg';
 import imgXiomiPhone from '../../assets/752407_r3412.jpg';
 
 
+
 const ProductsPreview = () => {
 
     const productsList = [
@@ -52,12 +53,12 @@ const ProductsPreview = () => {
             quantity: 8
         }
 ]
-
+console.log(productsList)
     return (
         <div className='container'>
             <div className='products__preview-logo'><img src={logo2} alt='logotype' /></div>
             <Products productsList={productsList} />
-            {/* {productsList.map(product => {<Products product={product} />})} */}
+            {/* {productsList.map(product => <Products product={product} />)} */}
         </div>
     )
 }
