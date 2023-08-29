@@ -5,3 +5,17 @@ body {
 .header__logo {
   margin: 20px 0 30px 30px;
 }
+
+.loader {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #3498db;
+  width: 120px;
+  height: 120px;
+  -moz-animation: spin 2s linear infinite;
+}

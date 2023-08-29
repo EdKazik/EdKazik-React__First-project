@@ -6,7 +6,7 @@ import { URL_API_PRODUCTS } from '../../https/https';
 
 function ProductsTable() {
     const [products, setProducts] = useState([]);
-    const [, setLoading] = useState(true)
+    const [loading, setLoading] = useState(true)
     
     useEffect (() =>{
         sendRequest()
@@ -26,8 +26,7 @@ function ProductsTable() {
     return (
         <div className='container'>
             <div className='header__logo'><img src={logoproducts} alt='logotype' /></div>
-            <Table products={products} />
-            {/* {setLoading ? <div><span>Loading</span></div> : <Table products={products} />} */}
+            {loading ? <div className="loader"></div> : <Table products={products} />}
         </div>
     )
 }
