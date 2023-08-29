@@ -4,7 +4,7 @@ import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import { useState } from 'react';
 // import Button from '../Button/Button';
 import { Localhost_URL } from '../../https/https';
-// import { URL_API } from '../../https/https';
+
 
 
 const Form = () => {
@@ -12,8 +12,8 @@ const Form = () => {
     const [isLoginEmpty, setIsLoginEmpty] = useState(false);
     const [isPasswordEmpty, setIsPasswordEmpty] = useState(false);
     const [isInvalid, setIsInvalid] = useState(false);
-      const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
+    const [login, setLogin] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleClick = (event) => {
         event.preventDefault()
@@ -66,10 +66,8 @@ const Form = () => {
             setIsInvalid(true)
         }
 
-
-
-    // setLogin('')
-    // setPassword('')
+    setLogin('')
+    setPassword('')
 }
 
 
