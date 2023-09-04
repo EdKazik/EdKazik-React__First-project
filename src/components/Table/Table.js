@@ -4,9 +4,17 @@ import {AiOutlinePlus} from 'react-icons/ai';
 import { IoMdPerson } from 'react-icons/io';
 import { BsFillPencilFill } from 'react-icons/bs';
 import { BsFillTrash3Fill } from 'react-icons/bs';
+import { useNavigate } from 'react-router-dom';
 
 
 const Table = ({ products }) => {
+
+    const leftButtonNavigate = useNavigate();
+
+    const leftButtonClick = () => {
+        leftButtonNavigate('/products-preview')
+        console.log('left button is OK!!!')
+    }
 
     const productsElements = products.map(el => {
         return (
@@ -26,7 +34,7 @@ const Table = ({ products }) => {
     return (
         <div className='main'>
             <div className='buttons'>
-            <Button className='left__button'>
+            <Button className='left__button' onClick={leftButtonClick}>
                 <IoMdPerson className='left__button-logo'/>
                 Preview</Button>
             <Button className='right__button'>
