@@ -4,6 +4,7 @@ import { AiOutlineEyeInvisible, AiOutlineEye } from 'react-icons/ai';
 import { useState } from 'react';
 // import Button from '../Button/Button';
 import { Localhost_URL } from '../../https/https';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -14,6 +15,7 @@ const Form = () => {
     const [isInvalid, setIsInvalid] = useState(false);
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
+    const loginNavigate = useNavigate();
 
     const handleClick = (event) => {
         event.preventDefault()
@@ -26,8 +28,6 @@ const Form = () => {
 
         if (!login) {
             setIsLoginEmpty(true)
-        } else {
-            
         }
         if (!password) {
             setIsPasswordEmpty(true)
@@ -58,10 +58,15 @@ const Form = () => {
                 },
                 body: JSON.stringify({ login, password })
             };
+            try {
+                const response = await fetch(`${Localhost_URL}/login`, config);
+                const data = await response.json();
+                localStorage.setItem("jwt", data.jwt);
+                loginNavigate('/products-table')
+            } catch (error) {
+                console.error(`Error in response`);
+            }
 
-            const response = await fetch(`${Localhost_URL}/login`, config);
-            const data = await response.json();
-            localStorage.setItem("jwt", data.jwt)
         } else {
             setIsInvalid(true)
         }
