@@ -7,7 +7,7 @@ import { BsFillTrash3Fill } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 
 
-const Table = ({ products }) => {
+const Table = ({ products, className , onClick }) => {
 
     const leftButtonNavigate = useNavigate();
 

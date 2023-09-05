@@ -1,7 +1,6 @@
-body {
-  background-color: rgba(45, 150, 76, 0.849);
-}
-
 .products__preview-logo {
-  margin: 20px 0 60px 30px;
+  padding: 20px 0 60px 30px;
+}
+.product__block {
+  cursor: pointer;
 }
