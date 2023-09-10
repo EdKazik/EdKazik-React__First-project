@@ -69,3 +69,9 @@ th {
   font-size: 22px;
   color: aliceblue;
 }
+.delete__button {
+  cursor: pointer;
+}
+.edit__button {
+  cursor: pointer;
+}

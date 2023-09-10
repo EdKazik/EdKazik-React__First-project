@@ -20,3 +20,6 @@
   height: 120px;
   -moz-animation: spin 2s linear infinite;
 }
+.delete > span {
+  /* background-color: red; */
+}

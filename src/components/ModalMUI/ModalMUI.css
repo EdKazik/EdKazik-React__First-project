@@ -1,0 +1,19 @@
+.modal__button-cancel {
+  color: black;
+  background-color: grey;
+  padding: 5px;
+}
+#modal-modal-description {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+.modal__button-delete {
+  color: black;
+  background-color: rgb(233, 12, 12);
+  padding: 5px;
+}
+#modal-modal-title {
+  color: green;
+  font-size: 20px;
+}
