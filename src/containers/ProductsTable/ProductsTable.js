@@ -12,6 +12,8 @@ function ProductsTable() {
   const [idProduct, setIdProduct] = useState(null);
   const [product, setProduct] = useState("");
 
+  const [openUnivModal, setOpenUnivModal] = useState(false);
+
   useEffect(
     (isLoaded) => {
       sendRequest();
@@ -31,12 +33,10 @@ function ProductsTable() {
   };
   const handleClose = () => {
     setOpenModal(false);
-    // console.log(idProduct);
   };
 
   const deleteProduct = async (event, id) => {
     event.preventDefault();
-    // console.log(`DELETE PRODUCT BUTTON ACTIVE ${id}`);
 
     await fetch(`${URL_API_PRODUCTS}/products/${id}`, {
       method: "DELETE",
@@ -47,6 +47,23 @@ function ProductsTable() {
 
     setIsLoaded(false);
     handleClose();
+  };
+
+  const handleCloseUnivModal = () => {
+    setOpenUnivModal(false);
+  };
+
+  const addProduct = async (event) => {
+    event.preventDefault();
+
+    await fetch(`${URL_API_PRODUCTS}/products`, {
+      method: "POST",
+      headers: {
+        Content_Type: "application/json",
+      },
+      body: JSON.stringify({ product }),
+    });
+    setIsLoaded(false);
   };
 
   return (
@@ -65,6 +82,12 @@ function ProductsTable() {
           idProduct={idProduct}
           setIdProduct={setIdProduct}
           handleClose={handleClose}
+          //   product={product}
+          //   setProduct={setProduct}
+          openUnivModal={openUnivModal}
+          setOpenUnivModal={setOpenUnivModal}
+          handleCloseUnivModal={handleCloseUnivModal}
+          addProduct={addProduct}
         />
       )}
     </div>

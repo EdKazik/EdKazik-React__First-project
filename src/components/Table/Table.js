@@ -6,6 +6,8 @@ import { BsFillPencilFill } from "react-icons/bs";
 import { BsFillTrash3Fill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import BasicModal from "../../components/ModalMUI/ModalMUI";
+import UniversalModal from "../UniversalModal/UniversalModal";
+import { useState } from "react";
 
 const Table = ({
   products,
@@ -15,12 +17,25 @@ const Table = ({
   idProduct,
   setIdProduct,
   handleClose,
+  openUnivModal,
+  setOpenUnivModal,
+  handleCloseUnivModal,
+  addProduct,
+
+  //   product,
+  //   setProduct,
 }) => {
+  const [titleModal, setTitleModal] = useState("");
   const leftButtonNavigate = useNavigate();
 
-  const leftButtonClick = () => {
+  const previewButtonClick = () => {
     leftButtonNavigate("/products-preview");
-    // console.log("left button is OK!!!");
+  };
+
+  const addButtonClick = () => {
+    setOpenUnivModal(true);
+    setTitleModal("Add");
+    console.log("add button is OK!!!");
   };
 
   const handleDeleteShowModal = (id) => {
@@ -28,8 +43,11 @@ const Table = ({
     setIdProduct(id);
   };
 
-  const handleEditShowModal = () => {
-    setOpenModal(true);
+  const handleOpenUnivModal = () => {
+    setOpenUnivModal(true);
+    setTitleModal("Edit");
+
+    // console.log(openUnivModal);
   };
 
   const productsElements = products.map((el) => {
@@ -43,7 +61,7 @@ const Table = ({
         <td>
           <BsFillPencilFill
             className="edit__button"
-            onClick={handleEditShowModal}
+            onClick={handleOpenUnivModal}
           />
         </td>
         <td>
@@ -59,11 +77,11 @@ const Table = ({
   return (
     <div className="main">
       <div className="buttons">
-        <Button className="left__button" onClick={leftButtonClick}>
+        <Button className="left__button" onClick={previewButtonClick}>
           <IoMdPerson className="left__button-logo" />
           Preview
         </Button>
-        <Button className="right__button">
+        <Button className="right__button" onClick={addButtonClick}>
           <AiOutlinePlus className="right__button-logo" />
           Add product
         </Button>
@@ -86,9 +104,14 @@ const Table = ({
       <BasicModal
         openModal={openModal}
         deleteProduct={deleteProduct}
-        //   editProduct={editProduct}
         idProduct={idProduct}
         handleClose={handleClose}
+      />
+      <UniversalModal
+        handleCloseUnivModal={handleCloseUnivModal}
+        openUnivModal={openUnivModal}
+        addProduct={addProduct}
+        titleModal={titleModal}
       />
     </div>
   );
