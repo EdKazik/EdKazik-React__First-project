@@ -27,12 +27,13 @@
   padding: 5px 15px;
   background-color: rgb(45, 95, 4);
   color: whitesmoke;
+  cursor: pointer;
 }
 .button__submit {
   padding: 5px 15px;
   background-color: rgb(0, 0, 0);
   color: whitesmoke;
-  /* margin-left: 10px; */
+  cursor: pointer;
 }
 .form__titles {
   padding: 5px 0 5px 0;
@@ -45,4 +46,13 @@
   font-size: 24px;
   font-weight: 700;
   /* background: rgb(53, 52, 52); */
+}
+.error__span {
+  display: block;
+  margin: 0;
+  text-align: center;
+  color: red;
+}
+.error {
+  border: 2px solid red;
 }

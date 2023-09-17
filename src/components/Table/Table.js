@@ -20,12 +20,16 @@ const Table = ({
   openUnivModal,
   setOpenUnivModal,
   handleCloseUnivModal,
-  addProduct,
-
-  //   product,
-  //   setProduct,
+  handleChangeModal,
+  handleSubmitModal,
+  isEmptyCategory,
+  isEmptyName,
+  isEmptyQuantity,
+  isEmptyPrice,
+  isEmptyDescription,
 }) => {
   const [titleModal, setTitleModal] = useState("");
+
   const leftButtonNavigate = useNavigate();
 
   const previewButtonClick = () => {
@@ -35,7 +39,6 @@ const Table = ({
   const addButtonClick = () => {
     setOpenUnivModal(true);
     setTitleModal("Add");
-    console.log("add button is OK!!!");
   };
 
   const handleDeleteShowModal = (id) => {
@@ -46,8 +49,6 @@ const Table = ({
   const handleOpenUnivModal = () => {
     setOpenUnivModal(true);
     setTitleModal("Edit");
-
-    // console.log(openUnivModal);
   };
 
   const productsElements = products.map((el) => {
@@ -109,9 +110,15 @@ const Table = ({
       />
       <UniversalModal
         handleCloseUnivModal={handleCloseUnivModal}
-        openUnivModal={openUnivModal}
-        addProduct={addProduct}
         titleModal={titleModal}
+        openUnivModal={openUnivModal}
+        handleChangeModal={handleChangeModal}
+        handleSubmitModal={handleSubmitModal}
+        isEmptyCategory={isEmptyCategory}
+        isEmptyName={isEmptyName}
+        isEmptyQuantity={isEmptyQuantity}
+        isEmptyPrice={isEmptyPrice}
+        isEmptyDescription={isEmptyDescription}
       />
     </div>
   );
