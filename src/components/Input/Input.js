@@ -8,12 +8,13 @@ const Input = ({
   handleChange,
   name,
   onClick,
+  handleChangeModal,
 }) => {
   return (
     <label className="input__label">
       <input
         name={name}
-        onChange={handleChange}
+        onChange={(handleChange, handleChangeModal)}
         type={type}
         placeholder={placeholder}
         value={value}

@@ -10,19 +10,22 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  // width: 400,
-  // bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
   p: 4,
 };
 
 const UniversalModal = ({
-  setOpenUnivModal,
   openUnivModal,
   handleCloseUnivModal,
-  addProduct,
   titleModal,
+  handleChangeModal,
+  handleSubmitModal,
+  isEmptyCategory,
+  isEmptyName,
+  isEmptyQuantity,
+  isEmptyPrice,
+  isEmptyDescription,
 }) => {
   return (
     <Modal
@@ -43,19 +46,70 @@ const UniversalModal = ({
         >
           <form>
             <span className="form__titles">Category</span>
-            <Input type="text" className="modal__input" />
+            <Input
+              handleChangeModal={handleChangeModal}
+              name="Category"
+              type="text"
+              className={`modal__input ${isEmptyCategory ? "error" : ""}`}
+            />
+            {isEmptyCategory && (
+              <span className="category__span error__span">
+                This field is required
+              </span>
+            )}
             <br />
             <span className="form__titles">Name</span>
-            <Input type="text" className="modal__input" />
+            <Input
+              handleChangeModal={handleChangeModal}
+              name="Name"
+              type="text"
+              className={`modal__input ${isEmptyName ? "error" : ""}`}
+            />
+            {isEmptyName && (
+              <span className="name__span error__span">
+                This field is required
+              </span>
+            )}
+
             <br />
             <span className="form__titles">Quantity</span>
-            <Input type="text" className="modal__input" />
+            <Input
+              handleChangeModal={handleChangeModal}
+              name="Quantity"
+              type="text"
+              className={`modal__input ${isEmptyQuantity ? "error" : ""}`}
+            />
+            {isEmptyQuantity && (
+              <span className="quantity__ span error__span">
+                This field is required
+              </span>
+            )}
             <br />
             <span className="form__titles">Price</span>
-            <Input type="text" className="modal__input" />
+            <Input
+              handleChangeModal={handleChangeModal}
+              name="Price"
+              type="text"
+              className={`modal__input ${isEmptyPrice ? "error" : ""}`}
+            />
+            {isEmptyPrice && (
+              <span className="price__span error__span">
+                This field is required
+              </span>
+            )}
             <br />
             <span className="form__titles">Description</span>
-            <Input type="text" className="modal__input" />
+            <Input
+              handleChangeModal={handleChangeModal}
+              name="Description"
+              type="text"
+              className={`modal__input ${isEmptyDescription ? "error" : ""}`}
+            />
+            {isEmptyDescription && (
+              <span className="description__span error__span">
+                This field is required
+              </span>
+            )}
             <br />
           </form>
 
@@ -66,7 +120,7 @@ const UniversalModal = ({
             className="button__cancel"
           />
           <Input
-            onClick={addProduct}
+            onClick={handleSubmitModal}
             type="submit"
             value="Submit"
             className="button__submit"
